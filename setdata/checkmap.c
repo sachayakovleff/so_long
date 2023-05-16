@@ -6,7 +6,7 @@
 /*   By: syakovle <syakovle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 15:53:28 by syakovle          #+#    #+#             */
-/*   Updated: 2023/05/16 14:39:33 by syakovle         ###   ########.fr       */
+/*   Updated: 2023/05/16 15:11:24 by syakovle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ int	checklinesize(t_mlx *mlx)
 	}
 	if (checkvent(mlx) == -1)
 	{
-		ft_printf("Error: Invalid vent number. Must be 0 or 2");
+		ft_printf("Error: Invalid vent number. Must be 0 or 2\n");
 		return (-1);
 	}
 	return (1);
@@ -88,12 +88,12 @@ int	ft_checkmap(t_mlx *mlx)
 		return (-1);
 	if (checkwallrect(mlx) == -1)
 	{
-		ft_printf("Error: Map must be encircled by walls/corner");
+		ft_printf("Error: Map must be encircled by walls/corner\n");
 		return (-1);
 	}
 	if (checkplayer(mlx, 'p') == -1 || checkplayer(mlx, 'e') == -1)
 	{
-		ft_printf("Error: Invalid number of players/exit (1 player 1 exit)");
+		ft_printf("Error: Invalid number of players/exit (1 player 1 exit)\n");
 		return (-1);
 	}
 	return (1);

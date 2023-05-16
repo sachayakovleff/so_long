@@ -6,7 +6,7 @@
 /*   By: syakovle <syakovle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 16:23:24 by syakovle          #+#    #+#             */
-/*   Updated: 2023/05/12 19:12:44 by syakovle         ###   ########.fr       */
+/*   Updated: 2023/05/16 15:12:35 by syakovle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void	ft_checkplayerxpm(t_mlx *mlx)
 		{
 			if (mlx->player.playerimg[i][j] == NULL)
 			{
-				ft_printf("error, xpm file couldn't load a player xpm");
+				ft_printf("error, xpm file couldn't load a player xpm\n");
 				freedata(mlx);
 				exit(0);
 			}
@@ -75,7 +75,7 @@ void	ft_checkwallsxpm(t_mlx *mlx, int i)
 		|| mlx->walls.walls_top[0] == NULL || mlx->walls.walls_right[0] == NULL)
 	{
 		{
-			ft_printf("error, xpm file couldn't load a wall xpm");
+			ft_printf("error, xpm file couldn't load a wall xpm\n");
 			freedata(mlx);
 			exit(0);
 		}
@@ -84,7 +84,7 @@ void	ft_checkwallsxpm(t_mlx *mlx, int i)
 	{
 		if (mlx->walls.corner[i] == NULL)
 		{
-			ft_printf("error, xpm file couldn't load a corner xpm");
+			ft_printf("error, xpm file couldn't load a corner xpm\n");
 			freedata(mlx);
 			exit(0);
 		}
@@ -98,7 +98,7 @@ void	ft_checkgroundxpm(t_mlx *mlx, int i)
 	{
 		if (mlx->walls.groundimg[i] == NULL)
 		{
-			ft_printf("error, xpm file couldn't load a ground xpm");
+			ft_printf("error, xpm file couldn't load a ground xpm\n");
 			freedata(mlx);
 			exit(0);
 		}

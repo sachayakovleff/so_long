@@ -6,7 +6,7 @@
 /*   By: syakovle <syakovle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 15:07:23 by syakovle          #+#    #+#             */
-/*   Updated: 2023/05/17 16:46:10 by syakovle         ###   ########.fr       */
+/*   Updated: 2023/05/17 18:10:27 by syakovle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int	handleloop(t_mlx *mlx)
 	}
 	i++;
 	ft_display_walls(mlx, 0, 0);
-	ft_display_ground(mlx);
+	ft_display_ground(mlx, 0, 0);
 	ft_display_danger(mlx, i);
 	ft_display_player(mlx, u[0]);
 	return (0);
@@ -104,7 +104,7 @@ int	main(int ac, char **av)
 {
 	t_mlx	mlx;
 
-	if (ac != 2)
+	if (ac != 2 || (ac >= 2 && endber(av[1]) != 1))
 	{
 		ft_printf("format: ./so_long <file.ber>\n");
 		exit(0);
@@ -112,7 +112,9 @@ int	main(int ac, char **av)
 	mlx.mapfile = ft_strdup(av[1]);
 	mlx.mlx_ptr = mlx_init();
 	setdata(&mlx);
-	if (ft_strlen(mlx.map[0]) * 32 > 1920 || ft_arraylen(mlx.map) * 32 > 1080)
+	mlx_get_screen_size(mlx.mlx_ptr, &(mlx.ss_x), &(mlx.ss_y));
+	if (ft_strlen(mlx.map[0]) * 32 > mlx.ss_x
+		|| ft_arraylen(mlx.map) * 32 > mlx.ss_y)
 	{
 		ft_printf("map too big (for this screen)\n");
 		freedata(&mlx);

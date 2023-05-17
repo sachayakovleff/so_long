@@ -6,7 +6,7 @@
 /*   By: syakovle <syakovle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 15:57:07 by syakovle          #+#    #+#             */
-/*   Updated: 2023/05/17 16:47:22 by syakovle         ###   ########.fr       */
+/*   Updated: 2023/05/17 17:50:27 by syakovle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,8 @@ typedef struct s_mlx
 {
 	void		*mlx_ptr;
 	void		*win_ptr;
+	int			ss_x;
+	int			ss_y;
 	char		**map;
 	char		*mapfile;
 	int			count[2];
@@ -77,7 +79,7 @@ void	freedata(t_mlx *mlx);
 void	freesplit(char **array);
 int		ft_checkmap(t_mlx *mlx);
 void	ft_display_walls(t_mlx *mlx, int i, int j);
-void	ft_display_ground(t_mlx *mlx);
+void	ft_display_ground(t_mlx *mlx, int i, int j);
 void	ft_display_danger(t_mlx *mlx, int u);
 void	ft_display_player(t_mlx *mlx, int u);
 void	getplayerpos(t_mlx *mlx);
@@ -95,8 +97,9 @@ void	ft_checkwallsxpm(t_mlx *mlx, int i);
 void	ft_checkgroundxpm(t_mlx *mlx, int i);
 int		checkwin(t_mlx *mlx);
 int		ft_arraylen(char	**str);
-int		setvent(char **map);
+int		setvent(char **map, int i, int j);
 int		ft_close(t_mlx *mlx);
 int		iskey(int key);
+int		endber(char *str);
 
 #endif

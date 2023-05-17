@@ -6,7 +6,7 @@
 /*   By: syakovle <syakovle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 15:53:28 by syakovle          #+#    #+#             */
-/*   Updated: 2023/05/17 16:33:03 by syakovle         ###   ########.fr       */
+/*   Updated: 2023/05/17 17:14:30 by syakovle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,8 @@ int	ft_checkmap(t_mlx *mlx)
 	if (mlx->map == NULL)
 	{
 		ft_printf("Error: Can't open the map // ");
-		ft_printf("Consecutive newlines in %s\n", mlx->mapfile);
+		ft_printf("Newline inside the map (not rect) // ");
+		ft_printf("Consecutive newlines in %s \n", mlx->mapfile);
 		return (-1);
 	}
 	if (checkchar(mlx) == -1)

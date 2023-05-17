@@ -6,7 +6,7 @@
 /*   By: syakovle <syakovle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 15:52:09 by syakovle          #+#    #+#             */
-/*   Updated: 2023/05/17 16:47:09 by syakovle         ###   ########.fr       */
+/*   Updated: 2023/05/17 17:28:51 by syakovle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,19 @@ int	ft_close(t_mlx *mlx)
 int	iskey(int key)
 {
 	if (key == 'w' || key == 'a' || key == 's' || key == 'd')
+		return (1);
+	return (-1);
+}
+
+int	endber(char *str)
+{
+	int	i;
+
+	i = ft_strlen(str) - 1;
+	if (i < 4)
+		return (-1);
+	if (str[i] == 'r' && str[i - 1] == 'e'
+		&& str[i - 2] == 'b' && str[i - 3] == '.')
 		return (1);
 	return (-1);
 }

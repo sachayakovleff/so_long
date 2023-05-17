@@ -6,7 +6,7 @@
 /*   By: syakovle <syakovle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 00:45:57 by syakovle          #+#    #+#             */
-/*   Updated: 2023/05/17 16:58:32 by syakovle         ###   ########.fr       */
+/*   Updated: 2023/05/17 18:16:27 by syakovle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,22 +17,22 @@ int	swaptox(char **map, int pos_x, int pos_y)
 	int	count;
 
 	count = 0;
-	if (iswall(map[pos_y][pos_x - 1]) != -1)
+	if (iswall(map[pos_y][pos_x - 1]) > -1)
 	{
 		map[pos_y][pos_x - 1] = 'x';
 		count++;
 	}
-	if (iswall(map[pos_y][pos_x + 1]) != -1)
+	if (iswall(map[pos_y][pos_x + 1]) > -1)
 	{
 		map[pos_y][pos_x + 1] = 'x';
 		count++;
 	}
-	if (iswall(map[pos_y - 1][pos_x]) != -1)
+	if (iswall(map[pos_y - 1][pos_x]) > -1)
 	{
 		map[pos_y - 1][pos_x] = 'x';
 		count++;
 	}
-	if (iswall(map[pos_y + 1][pos_x]) != -1)
+	if (iswall(map[pos_y + 1][pos_x]) > -1)
 	{
 		map[pos_y + 1][pos_x] = 'x';
 		count++;
@@ -76,10 +76,10 @@ int	changedvalues(char **map)
 	{
 		while (map[j][i])
 		{
+			if (map[j][i] == 'v')
+				count += setvent(map, i, j);
 			if (map[j][i] == 'P' || map[j][i] == 'x')
 				count += swaptox(map, i, j);
-			if (map[j][i] == 'v')
-				count += setvent(map);
 			i++;
 		}
 		i = 0;
@@ -122,6 +122,5 @@ int	checkwin(t_mlx *mlx)
 		freesplit(map);
 		exit(0);
 	}
-	freesplit(map);
-	return (1);
+	return (freesplit(map), 1);
 }

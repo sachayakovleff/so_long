@@ -6,7 +6,7 @@
 /*   By: syakovle <syakovle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 15:59:39 by syakovle          #+#    #+#             */
-/*   Updated: 2023/05/17 16:37:28 by syakovle         ###   ########.fr       */
+/*   Updated: 2023/05/17 18:17:07 by syakovle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,8 @@ int	iswall(char c)
 	{
 		return (-1);
 	}
+	if (c == 'v')
+		return (-2);
 	else
 		return (0);
 }

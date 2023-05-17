@@ -6,7 +6,7 @@
 /*   By: syakovle <syakovle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 00:45:57 by syakovle          #+#    #+#             */
-/*   Updated: 2023/05/17 16:31:39 by syakovle         ###   ########.fr       */
+/*   Updated: 2023/05/17 16:58:32 by syakovle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int	scanmap(char **map)
 		while (map[j][i])
 		{
 			if (map[j][i] == 'E' || map[j][i] == 'C')
-				count += swaptox(map, i, j);
+				count += 1;
 			i++;
 		}
 		i = 0;

@@ -6,7 +6,7 @@
 /*   By: syakovle <syakovle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 14:42:57 by syakovle          #+#    #+#             */
-/*   Updated: 2023/05/12 17:55:57 by syakovle         ###   ########.fr       */
+/*   Updated: 2023/05/17 16:33:26 by syakovle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	getplayerpos(t_mlx *mlx)
 	{
 		while (mlx->map[i][j])
 		{
-			if (mlx->map[i][j] == 'p')
+			if (mlx->map[i][j] == 'P')
 			{
 				mlx->player.pos_x = j * 32;
 				mlx->player.pos_y = i * 32;

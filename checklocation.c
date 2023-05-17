@@ -6,7 +6,7 @@
 /*   By: syakovle <syakovle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 15:59:39 by syakovle          #+#    #+#             */
-/*   Updated: 2023/05/16 14:38:37 by syakovle         ###   ########.fr       */
+/*   Updated: 2023/05/17 16:37:28 by syakovle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,22 +35,21 @@ int	isexit(t_mlx *mlx, char c)
 	{
 		while (mlx->map[j][i])
 		{
-			if (mlx->map[j][i] == 'd')
+			if (mlx->map[j][i] == 'C')
 				return (1);
 			i++;
 		}
 		i = 0;
 		j++;
 	}
-	if (c == 'e')
+	if (c == 'E')
 		return (-1);
 	return (1);
 }
 
 int	iswall(char c)
 {
-	if (c == '1' || c == '2' || c == '3' || c == '4' || c == '5' || c == '6'
-		|| c == '7' || c == '8' || c == '9' || c == 'x')
+	if (c == '1' || c == 'x')
 	{
 		return (-1);
 	}

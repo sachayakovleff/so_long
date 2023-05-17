@@ -6,7 +6,7 @@
 /*   By: syakovle <syakovle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 15:52:09 by syakovle          #+#    #+#             */
-/*   Updated: 2023/05/16 14:53:57 by syakovle         ###   ########.fr       */
+/*   Updated: 2023/05/17 16:47:09 by syakovle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	handlevent(t_mlx *mlx)
 
 void	handledanger(t_mlx *mlx)
 {
-	if (mlx->map[mlx->player.pos_y / 32][mlx->player.pos_x / 32] == 'd')
+	if (mlx->map[mlx->player.pos_y / 32][mlx->player.pos_x / 32] == 'C')
 		mlx->map[mlx->player.pos_y / 32][mlx->player.pos_x / 32] = 's';
 }
 
@@ -52,3 +52,9 @@ int	ft_close(t_mlx *mlx)
 	return (0);
 }
 
+int	iskey(int key)
+{
+	if (key == 'w' || key == 'a' || key == 's' || key == 'd')
+		return (1);
+	return (-1);
+}

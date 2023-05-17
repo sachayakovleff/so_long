@@ -6,7 +6,7 @@
 /*   By: syakovle <syakovle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 17:50:18 by syakovle          #+#    #+#             */
-/*   Updated: 2023/05/16 14:40:35 by syakovle         ###   ########.fr       */
+/*   Updated: 2023/05/17 16:44:57 by syakovle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,22 +37,8 @@ void	ft_display_walls(t_mlx *mlx, int i, int j)
 	{
 		while (mlx->map[j][i])
 		{
-			if (mlx->map[j][i] == '7')
-				ft_display(mlx, mlx->walls.corner[2], i, j);
-			if (mlx->map[j][i] == '2')
-				ft_display(mlx, mlx->walls.walls_top[0], i, j);
-			if (mlx->map[j][i] == '9')
-				ft_display(mlx, mlx->walls.corner[3], i, j);
-			if (mlx->map[j][i] == '4')
-				ft_display(mlx, mlx->walls.walls_right[0], i, j);
-			if (mlx->map[j][i] == '3')
-				ft_display(mlx, mlx->walls.corner[1], i, j);
-			if (mlx->map[j][i] == '8')
-				ft_display(mlx, mlx->walls.walls_bot[0], i, j);
 			if (mlx->map[j][i] == '1')
-				ft_display(mlx, mlx->walls.corner[0], i, j);
-			if (mlx->map[j][i] == '6')
-				ft_display(mlx, mlx->walls.walls_left[0], i, j);
+				ft_display(mlx, mlx->walls.walls_bot[0], i, j);
 			i++;
 		}
 		j++;
@@ -82,7 +68,7 @@ void	ft_display_danger(t_mlx *mlx, int u)
 	{
 		while (mlx->map[j][i])
 		{
-			if (mlx->map[j][i] == 'd')
+			if (mlx->map[j][i] == 'C')
 			{
 				if (u % 1000 < 500)
 					ft_display(mlx, mlx->walls.groundimg[3], i, j);
@@ -107,13 +93,13 @@ void	ft_display_ground(t_mlx *mlx)
 	{
 		while (mlx->map[j][i])
 		{
-			if (mlx->map[j][i] == 'g' || mlx->map[j][i] == 'p')
+			if ((mlx->map[j][i] == '0' || mlx->map[j][i] == 'P') && !(mlx->player.pos_x / 32 == i && mlx->player.pos_y / 32 == j))
 				ft_display(mlx, mlx->walls.groundimg[1], i, j);
-			if (mlx->map[j][i] == 'e')
+			if (mlx->map[j][i] == 'E' && !(mlx->player.pos_x / 32 == i && mlx->player.pos_y / 32 == j))
 				ft_display(mlx, mlx->walls.groundimg[2], i, j);
-			if (mlx->map[j][i] == 's')
+			if (mlx->map[j][i] == 's' && !(mlx->player.pos_x / 32 == i && mlx->player.pos_y / 32 == j))
 				ft_display(mlx, mlx->walls.groundimg[0], i, j);
-			if (mlx->map[j][i] == 'v')
+			if (mlx->map[j][i] == 'v' && !(mlx->player.pos_x / 32 == i && mlx->player.pos_y / 32 == j))
 				ft_display(mlx, mlx->walls.groundimg[4], i, j);
 			i++;
 		}

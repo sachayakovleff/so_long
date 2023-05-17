@@ -6,7 +6,7 @@
 /*   By: syakovle <syakovle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 15:07:23 by syakovle          #+#    #+#             */
-/*   Updated: 2023/05/16 15:13:09 by syakovle         ###   ########.fr       */
+/*   Updated: 2023/05/17 16:46:10 by syakovle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,22 +53,22 @@ int	handleloop(t_mlx *mlx)
 
 void	ft_setmove(int key, t_mlx *mlx)
 {
-	if (key == 122)
+	if (key == 'w')
 	{
 		mlx->player.pos_y -= 32;
 		mlx->player.facing = 3;
 	}
-	if (key == 113)
+	if (key == 'a')
 	{
 		mlx->player.pos_x -= 32;
 		mlx->player.facing = 1;
 	}
-	if (key == 115)
+	if (key == 's')
 	{
 		mlx->player.pos_y += 32;
 		mlx->player.facing = 0;
 	}
-	if (key == 100)
+	if (key == 'd')
 	{
 		mlx->player.pos_x += 32;
 		mlx->player.facing = 2;
@@ -85,7 +85,7 @@ int	handlekey(int key, t_mlx *mlx)
 	ft_setmove(key, mlx);
 	if (iswall(mlx->map[mlx->player.pos_y / 32][mlx->player.pos_x / 32]) == -1)
 		ft_goback(mlx);
-	else if (key != 32 || (key == 32
+	else if (iskey(key) == 1 || (key == 32
 			&& mlx->map[mlx->player.pos_y / 32][mlx->player.pos_x / 32] == 'v'))
 	{
 		mlx->count[1] = mlx->count[0];

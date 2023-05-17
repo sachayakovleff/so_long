@@ -6,7 +6,7 @@
 /*   By: syakovle <syakovle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 15:53:28 by syakovle          #+#    #+#             */
-/*   Updated: 2023/05/16 15:11:24 by syakovle         ###   ########.fr       */
+/*   Updated: 2023/05/17 16:33:03 by syakovle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,7 @@
 
 int	walllist(char c)
 {
-	if (c == '1' || c == '2' || c == '3' || c == '4' || c == '6' || c == '7')
-		return (1);
-	if (c == '8' || c == '9')
+	if (c == '1')
 		return (1);
 	return (-1);
 }
@@ -91,7 +89,7 @@ int	ft_checkmap(t_mlx *mlx)
 		ft_printf("Error: Map must be encircled by walls/corner\n");
 		return (-1);
 	}
-	if (checkplayer(mlx, 'p') == -1 || checkplayer(mlx, 'e') == -1)
+	if (checkplayer(mlx, 'P') == -1 || checkplayer(mlx, 'E') == -1)
 	{
 		ft_printf("Error: Invalid number of players/exit (1 player 1 exit)\n");
 		return (-1);

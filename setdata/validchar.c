@@ -6,7 +6,7 @@
 /*   By: syakovle <syakovle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 16:23:24 by syakovle          #+#    #+#             */
-/*   Updated: 2023/05/16 15:12:35 by syakovle         ###   ########.fr       */
+/*   Updated: 2023/05/17 16:34:10 by syakovle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,8 @@ int	checkvent(t_mlx *mlx)
 
 int	ft_validchar(char c)
 {
-	if (!(c <= '9' && c >= '0') && c != 'd'
-		&& c != 'p' && c != 'g' && c != 'e' && c != 's' && c != 'v')
+	if (!(c == '1') && c != 'C'
+		&& c != 'P' && c != '0' && c != 'E' && c != 's' && c != 'v')
 		return (-1);
 	return (1);
 }

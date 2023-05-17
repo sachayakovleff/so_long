@@ -6,7 +6,7 @@
 /*   By: syakovle <syakovle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 15:57:07 by syakovle          #+#    #+#             */
-/*   Updated: 2023/05/16 14:52:27 by syakovle         ###   ########.fr       */
+/*   Updated: 2023/05/17 16:47:22 by syakovle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,5 +97,6 @@ int		checkwin(t_mlx *mlx);
 int		ft_arraylen(char	**str);
 int		setvent(char **map);
 int		ft_close(t_mlx *mlx);
+int		iskey(int key);
 
 #endif
